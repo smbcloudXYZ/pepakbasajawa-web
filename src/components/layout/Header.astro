@@ -1,6 +1,7 @@
 ---
 import { SITE } from '@/config'
 import ThemeToggle from '@/components/ui/ThemeToggle.astro'
+import PlayStoreButton from '@/components/ui/PlayStoreButton.astro'
 ---
 
 <header>
@@ -9,7 +10,10 @@ import ThemeToggle from '@/components/ui/ThemeToggle.astro'
       {SITE.favicon && <img src="/favicon.svg" alt="favicon" class="favicon" />}
       <a href="/">{SITE.title}</a>
     </div>
-    <ThemeToggle />
+    <div class="header-right">
+      <PlayStoreButton />
+      <ThemeToggle />
+    </div>
   </nav>
 </header>
 <style>
@@ -30,6 +34,11 @@ import ThemeToggle from '@/components/ui/ThemeToggle.astro'
   }
   .logo-container {
     position: relative;
+  }
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
   }
   .favicon {
     position: absolute;
