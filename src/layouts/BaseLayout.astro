@@ -21,6 +21,29 @@ const language = SITE.language || 'en-US'
 >
   <head>
     <slot name="head" />
+    <script is:inline>
+      // Initialize theme based on system preference
+      function initTheme() {
+        const htmlElement = document.documentElement
+        const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+
+        // Remove any existing theme classes
+        htmlElement.classList.remove('light', 'dark')
+
+        // Apply the appropriate theme class
+        htmlElement.classList.add(isDark ? 'dark' : 'light')
+      }
+
+      // Run on initial load
+      initTheme()
+
+      // Listen for system theme changes
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
+        const htmlElement = document.documentElement
+        htmlElement.classList.remove('light', 'dark')
+        htmlElement.classList.add(e.matches ? 'dark' : 'light')
+      })
+    </script>
   </head>
   <body
     data-centered={SITE.centeredLayout}
