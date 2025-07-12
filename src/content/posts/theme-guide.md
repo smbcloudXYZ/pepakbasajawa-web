@@ -21,15 +21,15 @@ Chiri is a minimal blog theme built with [Astro](https://astro.build), offering 
 ```ts
 export const SITE = {
   // Site domain
-  website: 'https://astro-chiri.netlify.app/',
+  website: 'https://pepakbasajawa.5mb.app/',
   // Site title
-  title: 'CHIRI',
+  title: 'PepakBasaJawa',
   // Author name
-  author: '3ASH',
+  author: 'PepakBasaJawa',
   // Site description
-  description: 'Minimal blog built by Astro',
+  description: 'PepakBasaJawa Komplit - Tempat belajar bahasa Jawa',
   // Default language
-  language: 'en-US',
+  language: 'id-ID',
 
   // Content area width
   contentWidth: '35rem',
