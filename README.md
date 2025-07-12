@@ -37,9 +37,7 @@ Tempat belajar bahasa Jawa.
 
 4. Use `pnpm new <title>` to create new posts, or add your posts to `src/content/posts`.
 
-5. Deploy to Netlify, Vercel, or other platforms, refer to [Astro Deployment Guides](https://docs.astro.build/en/guides/deploy/) for more details.
-
-&emsp;[![Deploy to smbCloud](https://github.com/smbcloudXYZ/smbcloud-cli/blob/development/deploy.svg)](https://smbcloud.xyz)
+5. Deploy to smbCloud, Netlify, Vercel, or other platforms, refer to [Astro Deployment Guides](https://docs.astro.build/en/guides/deploy/) for more details.
 
 ## Commands
 
