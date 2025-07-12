@@ -2,15 +2,23 @@
 title: About
 ---
 
-<!--
-This content will be displayed at the top of the index page.
-You can leave this empty if you don’t want to show any content.
--->
+# Selamat Datang di PepakBasaJawa
 
-A static blog theme based on [Astro](https://astro.build), designed for clarity and focus.
+**PepakBasaJawa Komplit** adalah sumber belajar bahasa Jawa yang lengkap dan gratis. Kami berkomitmen untuk melestarikan dan memperkenalkan kekayaan bahasa Jawa kepada semua kalangan.
 
-The layout is intentionally minimal, letting your content take center stage without distraction. Built with flexibility in mind, the theme offers some freedom to customize while preserving its clean aesthetic.
+## Tentang Kami
 
-Effortlessly share your thoughts in _a calm & dustless space._
+PepakBasaJawa didirikan dengan tujuan menyediakan akses pembelajaran bahasa Jawa yang mudah dan menyenangkan. Kami percaya bahwa bahasa adalah jendela menuju budaya, dan bahasa Jawa memiliki kekayaan budaya yang luar biasa untuk dieksplorasi.
 
-Check posts below for details and view source on [GitHub](https://github.com/the3ash/astro-chiri).
+## Yang Kami Tawarkan
+
+- **Pelajaran Bahasa**: Dari tingkat dasar hingga mahir
+- **Kosakata**: Kumpulan kata dan ungkapan dalam bahasa Jawa
+- **Tata Bahasa**: Penjelasan tentang struktur dan aturan bahasa Jawa
+- **Budaya**: Wawasan tentang tradisi dan nilai-nilai Jawa melalui bahasanya
+
+## Filosofi Kami
+
+Kami percaya bahwa pembelajaran terbaik terjadi dalam lingkungan yang nyaman dan ramah. Situs ini dirancang dengan prinsip kesederhanaan, kejelasan, dan fokus pada konten yang bermanfaat.
+
+_Matur nuwun sampun sowan ing PepakBasaJawa. Sugeng sinau!_
