@@ -1,10 +1,10 @@
 export const SITE = {
   // SITE INFO ///////////////////////////////////////////////////////////////////////////////////////////
-  website: 'https://astro-chiri.netlify.app/', // Site domain
-  title: 'CHIRI', // Site title
-  author: '3ASH', // Author name
-  description: 'Minimal blog built by Astro', // Site description
-  language: 'en-US', // Default language
+  website: 'https://pepakbasajawa.5mb.app/', // Site domain
+  title: 'PepakBasaJawa', // Site title
+  author: 'PepakBasaJawa', // Author name
+  description: 'PepakBasaJawa Komplit - Tempat Belajar Bahasa Jawa', // Site description
+  language: 'id-ID', // Default language
 
   // GENERAL SETTINGS ////////////////////////////////////////////////////////////////////////////////////
   contentWidth: '35rem', // Content area width

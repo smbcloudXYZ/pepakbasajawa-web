@@ -1,0 +1,60 @@
+---
+import { SITE } from '@/config'
+---
+
+<a
+  href="https://play.google.com/store/apps/dev?id=9116586035310009096"
+  class="play-store-button"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <div class="play-store-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18">
+      <path
+        d="M3.609 1.814L13.792 12 3.61 22.186c-.37-.372-.585-.89-.585-1.435V3.25c0-.546.214-1.063.584-1.436zM14.746 12.96l4.497-2.58-3.182-1.83-3.483 2.077 2.168 2.334zM5.304 1.317l8.483 4.883-2.168 2.334L5.303 1.316zM19.243 9.889c.606.348.972.992.972 1.69 0 .55-.212 1.066-.583 1.439l-4.503 2.584-2.165-2.333 3.496-2.088 2.783-1.292z"
+        fill="currentColor"></path>
+    </svg>
+  </div>
+  <div class="play-store-text">
+    <span class="download-text">Download</span>
+  </div>
+</a>
+
+<style>
+  .play-store-button {
+    display: flex;
+    align-items: center;
+    background-color: var(--text-primary);
+    color: var(--bg);
+    text-decoration: none;
+    padding: 0.4rem 0.75rem;
+    border-radius: 6px;
+    transition: opacity 0.2s ease;
+    font-size: 0.875rem;
+  }
+
+  .play-store-button:hover {
+    opacity: 0.9;
+  }
+
+  .play-store-button:active {
+    opacity: 0.7;
+  }
+
+  .play-store-icon {
+    margin-right: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .play-store-text {
+    display: flex;
+    align-items: center;
+    line-height: 1;
+  }
+
+  .download-text {
+    font-weight: var(--font-weight-bold);
+  }
+</style>

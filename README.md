@@ -1,11 +1,10 @@
-# Chiri 🌸
+# PepakBasaJawa
 
-![screenshot-light](public/images/screenshot-light.png)
-![screenshot-dark](public/images/screenshot-dark.png)
+Tempat belajar bahasa Jawa.
 
-Chiri is a minimal blog theme built with [Astro](https://astro.build), offering customization options while preserving its clean aesthetic.
+## Deploy on smbCloud
 
-Check the [demo](https://astro-chiri.netlify.app/) for more details.
+[![Deploy to smbCloud](https://github.com/smbcloudXYZ/smbcloud-cli/blob/development/deploy.svg)](https://smbcloud.xyz)
 
 ## Features
 
@@ -20,7 +19,7 @@ Check the [demo](https://astro-chiri.netlify.app/) for more details.
 
 ## Getting Started
 
-1. [Fork](https://github.com/the3ash/astro-chiri/fork) this repository, or use this template to [create a new repository](https://github.com/new?template_name=astro-chiri&template_owner=the3ash).
+1. Clone the repo.
 
 2. Run the following commands:
 
@@ -40,7 +39,7 @@ Check the [demo](https://astro-chiri.netlify.app/) for more details.
 
 5. Deploy to Netlify, Vercel, or other platforms, refer to [Astro Deployment Guides](https://docs.astro.build/en/guides/deploy/) for more details.
 
-&emsp;[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start) [![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/new)
+&emsp;[![Deploy to smbCloud](https://github.com/smbcloudXYZ/smbcloud-cli/blob/development/deploy.svg)](https://smbcloud.xyz)
 
 ## Commands
 
@@ -49,6 +48,7 @@ Check the [demo](https://astro-chiri.netlify.app/) for more details.
 
 ## References
 
+- https://astro-chiri.netlify.app/
 - https://paco.me/
 - https://benji.org/
 - https://shud.in/
