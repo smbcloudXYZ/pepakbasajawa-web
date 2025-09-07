@@ -4,11 +4,11 @@
     />
     <style>
         path {
-        fill:#111;
+        fill: #c5d932;
         }
         @media (prefers-color-scheme: dark) {
         path {
-        fill: #ccc;
+        fill: #c5d932;
         }
         }
     </style>
