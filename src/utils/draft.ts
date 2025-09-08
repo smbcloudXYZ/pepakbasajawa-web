@@ -1,11 +1,12 @@
 import { getCollection, type CollectionEntry } from 'astro:content'
 
 /**
- * Get all posts, filtering out posts whose filenames start with _
+ * Get all posts, filtering out posts whose filenames start with _ and static pages
  */
 export async function getFilteredPosts() {
   const posts = await getCollection('posts')
-  return posts.filter((post) => !post.id.startsWith('_'))
+  const staticPages = ['privacy-policy', 'terms-of-use']
+  return posts.filter((post) => !post.id.startsWith('_') && !staticPages.includes(post.id))
 }
 
 /**

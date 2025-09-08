@@ -1,14 +1,10 @@
-import { getCollection, type CollectionEntry } from 'astro:content'
+import type { CollectionEntry } from 'astro:content'
 import { SITE } from '@/config'
 import type { APIContext } from 'astro'
+import { getSortedFilteredPosts } from '@/utils/draft'
 
 export async function generateRSS(context: APIContext) {
-  const posts = await getCollection('posts')
-  const filteredPosts = posts.filter((post) => !post.id.startsWith('_'))
-  const sortedPosts = filteredPosts.sort(
-    (a: CollectionEntry<'posts'>, b: CollectionEntry<'posts'>) =>
-      b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-  )
+  const sortedPosts = await getSortedFilteredPosts()
 
   const rss = `<?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom">
@@ -43,12 +39,7 @@ export async function generateRSS(context: APIContext) {
 }
 
 export async function generateAtom(context: APIContext) {
-  const posts = await getCollection('posts')
-  const filteredPosts = posts.filter((post) => !post.id.startsWith('_'))
-  const sortedPosts = filteredPosts.sort(
-    (a: CollectionEntry<'posts'>, b: CollectionEntry<'posts'>) =>
-      b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-  )
+  const sortedPosts = await getSortedFilteredPosts()
 
   const atom = `<?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
