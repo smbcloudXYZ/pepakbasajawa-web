@@ -2,13 +2,13 @@
 title: About
 ---
 
-# Selamat Datang di PepakBasaJawa
+# Selamat Datang di PBJ Komplit!
 
-**PepakBasaJawa Komplit** adalah sumber belajar bahasa Jawa yang lengkap dan gratis. Kami berkomitmen untuk melestarikan dan memperkenalkan kekayaan bahasa Jawa kepada semua kalangan.
+**PBJ Komplit!** adalah sumber belajar bahasa Jawa yang lengkap dan gratis. Kami berkomitmen untuk melestarikan dan memperkenalkan kekayaan bahasa Jawa kepada semua kalangan.
 
 ## Tentang Kami
 
-PepakBasaJawa didirikan dengan tujuan menyediakan akses pembelajaran bahasa Jawa yang mudah dan menyenangkan. Kami percaya bahwa bahasa adalah jendela menuju budaya, dan bahasa Jawa memiliki kekayaan budaya yang luar biasa untuk dieksplorasi.
+PBJ Komplit! didirikan dengan tujuan menyediakan akses pembelajaran bahasa Jawa yang mudah dan menyenangkan. Kami percaya bahwa bahasa adalah jendela menuju budaya, dan bahasa Jawa memiliki kekayaan budaya yang luar biasa untuk dieksplorasi.
 
 ## Yang Kami Tawarkan
 
@@ -21,4 +21,4 @@ PepakBasaJawa didirikan dengan tujuan menyediakan akses pembelajaran bahasa Jawa
 
 Kami percaya bahwa pembelajaran terbaik terjadi dalam lingkungan yang nyaman dan ramah. Situs ini dirancang dengan prinsip kesederhanaan, kejelasan, dan fokus pada konten yang bermanfaat.
 
-_Matur nuwun sampun sowan ing PepakBasaJawa. Sugeng sinau!_
+_Matur nuwun sampun sowan ing PBJ Komplit!. Sugeng sinau!_

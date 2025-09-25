@@ -1,4 +1,4 @@
-# PepakBasaJawa
+# PBJ Komplit!
 
 Tempat belajar bahasa Jawa.
 
