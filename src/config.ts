@@ -2,7 +2,7 @@ export const SITE = {
   // SITE INFO ///////////////////////////////////////////////////////////////////////////////////////////
   website: 'https://pepakbasajawa.5mb.app/', // Site domain
   title: 'PBJ Komplit!', // Site title
-  author: 'smbCloud', // Author name
+  author: 'Splitfire AB', // Author name
   description: 'PBJ Komplit! - Tempat Belajar Bahasa Jawa', // Site description
   language: 'id-ID', // Default language
 
