@@ -19,6 +19,7 @@
   "dependencies": {
     "@astrojs/mdx": "^4.3.0",
     "@astrojs/sitemap": "^3.4.1",
+    "@tailwindcss/vite": "^4.1.13",
     "astro": "^5.11.0",
     "katex": "^0.16.22",
     "mdast-util-to-string": "^4.0.0",
@@ -27,6 +28,7 @@
     "remark-directive": "^4.0.0",
     "remark-math": "^6.0.0",
     "sharp": "^0.34.3",
+    "tailwindcss": "^4.1.13",
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {

@@ -13,6 +13,8 @@ import remarkTOC from './src/plugins/remark-toc.mjs'
 import { SITE } from './src/config'
 import path from 'path'
 
+import tailwindcss from '@tailwindcss/vite';
+
 export default defineConfig({
   site: SITE.website,
   devToolbar: {
@@ -42,6 +44,7 @@ export default defineConfig({
         '@': path.resolve('./src')
       }
     },
+
     build: {
       rollupOptions: {
         output: {
@@ -52,8 +55,11 @@ export default defineConfig({
         }
       }
     },
+
     optimizeDeps: {
       include: ['katex', 'reading-time']
-    }
+    },
+
+    plugins: [tailwindcss()]
   }
 })
