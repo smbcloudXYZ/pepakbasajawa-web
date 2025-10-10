@@ -2,15 +2,33 @@
 import { type CollectionEntry, getCollection } from 'astro:content'
 import PostLayout from '@/layouts/PostLayout.astro'
 import { render } from 'astro:content'
+import { getLangFromUrl } from '@/i18n/utils'
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts')
-  return posts
-    .filter((post) => !post.id.startsWith('_'))
-    .map((post) => ({
-      params: { slug: post.id },
-      props: post
-    }))
+  const paths = []
+  
+  // Filter out draft posts (starting with _)
+  const publishedPosts = posts.filter((post) => !post.id.startsWith('_'))
+  
+  for (const post of publishedPosts) {
+    // Check if it's an English post
+    if (post.id.startsWith('en/')) {
+      const slug = post.id.replace('en/', '')
+      paths.push({
+        params: { slug: `en/${slug}` },
+        props: post
+      })
+    } else {
+      // Indonesian post (default)
+      paths.push({
+        params: { slug: post.id },
+        props: post
+      })
+    }
+  }
+  
+  return paths
 }
 type Props = CollectionEntry<'posts'>
 

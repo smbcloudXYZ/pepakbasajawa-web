@@ -2,6 +2,7 @@
 import { SITE } from '@/config'
 import TransitionWrapper from '@/components/layout/TransitionWrapper.astro'
 import type { LayoutProps } from '@/types'
+import { getLangFromUrl } from '@/i18n/utils'
 
 type Props = LayoutProps
 
@@ -11,7 +12,8 @@ const widthValue = Math.min(parseFloat(contentWidth), 50)
 const shouldUseCustomWidth = widthValue > 25
 const finalWidth = shouldUseCustomWidth ? `${widthValue}rem` : '25rem'
 
-const language = SITE.language || 'en-US'
+const currentLang = getLangFromUrl(Astro.url)
+const language = currentLang === 'id' ? 'id-ID' : 'en-US'
 ---
 
 <html

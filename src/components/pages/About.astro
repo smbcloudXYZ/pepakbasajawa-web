@@ -1,8 +1,11 @@
 ---
 import { getEntry } from 'astro:content'
 import { render } from 'astro:content'
+import { getLangFromUrl } from '@/i18n/utils'
 
-const aboutEntry = await getEntry('about', 'about')
+const currentLang = getLangFromUrl(Astro.url)
+const aboutId = currentLang === 'en' ? 'en/about' : 'about'
+const aboutEntry = await getEntry('about', aboutId)
 // Check if there is actual content (excluding comments)
 const hasContent = aboutEntry?.body
   ? aboutEntry.body.replace(/<!--[\s\S]*?-->/g, '').trim().length > 0
