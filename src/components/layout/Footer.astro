@@ -1,5 +1,9 @@
 ---
 import { SITE } from '@/config'
+import { getLangFromUrl, useTranslations } from '@/i18n/utils'
+
+const currentLang = getLangFromUrl(Astro.url)
+const t = useTranslations(currentLang)
 const today = new Date()
 ---
 
@@ -7,9 +11,9 @@ const today = new Date()
   <div class="footer-content">
     <div class="footer-links">
       <nav class="footer-nav">
-        <a href="/contact">Contact</a>
-        <a href="/privacy-policy">Privacy Policy</a>
-        <a href="/terms-of-use">Terms of Use</a>
+        <a href={`${currentLang === 'id' ? '' : '/' + currentLang}/contact`}>{t('nav.contact')}</a>
+        <a href={`${currentLang === 'id' ? '' : '/' + currentLang}/privacy-policy`}>{t('nav.privacy')}</a>
+        <a href={`${currentLang === 'id' ? '' : '/' + currentLang}/terms-of-use`}>{t('nav.terms')}</a>
       </nav>
     </div>
     <div class="footer-bottom">
@@ -21,9 +25,9 @@ const today = new Date()
         <a href="https://5mb.app" target="__blank">{SITE.author}</a>
       </div>
       <div class="powered-by">
-        Powered by{' '}
+        {t('footer.poweredBy')}{' '}
         <a href="https://smbcloud.xyz" target="__blank">smbCloud</a> |{' '}
-        <a href="https://github.com/smbcloudXYZ/pepakbasajawa-web" target="__blank">Source</a>
+        <a href="https://github.com/smbcloudXYZ/pepakbasajawa-web" target="__blank">{t('footer.source')}</a>
       </div>
     </div>
   </div>

@@ -3,9 +3,13 @@
 // all pages through the use of the <BaseHead /> component.
 import { SITE } from '@/config'
 import type { BaseHeadProps } from '@/types/component.types'
+import { getLangFromUrl, getAlternateUrl } from '@/i18n/utils'
 import 'katex/dist/katex.min.css'
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+const currentLang = getLangFromUrl(Astro.url)
+const alternateLang = currentLang === 'id' ? 'en' : 'id'
+const alternateUrl = new URL(getAlternateUrl(Astro.url, alternateLang), Astro.site)
 
 const { title, description } = Astro.props as BaseHeadProps
 ---
@@ -36,6 +40,11 @@ const { title, description } = Astro.props as BaseHeadProps
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
 
+<!-- Alternate Languages -->
+<link rel="alternate" hreflang={currentLang} href={canonicalURL} />
+<link rel="alternate" hreflang={alternateLang} href={alternateUrl} />
+<link rel="alternate" hreflang="x-default" href={new URL('/', Astro.site)} />
+
 <!-- Primary Meta Tags -->
 <title>
   {title || SITE.title}
@@ -49,6 +58,8 @@ const { title, description } = Astro.props as BaseHeadProps
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={new URL('/chiri-og.png', Astro.url)} />
+<meta property="og:locale" content={currentLang === 'id' ? 'id_ID' : 'en_US'} />
+<meta property="og:locale:alternate" content={currentLang === 'id' ? 'en_US' : 'id_ID'} />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />

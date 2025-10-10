@@ -6,8 +6,8 @@ import { SITE } from '@/config'
 import { getSortedFilteredPosts } from '@/utils/draft'
 
 const allPosts = await getSortedFilteredPosts()
-// Filter for Indonesian posts only (not starting with en/)
-const posts = allPosts.filter((post) => !post.id.startsWith('en/'))
+// Filter for English posts only
+const posts = allPosts.filter((post) => post.id.startsWith('en/'))
 ---
 
 <IndexLayout title={SITE.title} description={SITE.description}>

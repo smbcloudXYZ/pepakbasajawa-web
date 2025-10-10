@@ -17,6 +17,13 @@ import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   site: SITE.website,
+  i18n: {
+    defaultLocale: 'id',
+    locales: ['id', 'en'],
+    routing: {
+      prefixDefaultLocale: false
+    }
+  },
   devToolbar: {
     enabled: false
   },
