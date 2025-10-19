@@ -27,7 +27,7 @@
     "rehype-katex": "^7.0.1",
     "remark-directive": "^4.0.0",
     "remark-math": "^6.0.0",
-    "sharp": "^0.34.3",
+    "sharp": "^0.34.4",
     "tailwindcss": "^4.1.13",
     "unist-util-visit": "^5.0.0"
   },
