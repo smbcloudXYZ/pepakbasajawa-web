@@ -3,35 +3,68 @@ import IndexLayout from '@/layouts/IndexLayout.astro'
 import { SITE } from '@/config'
 ---
 
-<IndexLayout title={`Contact - ${SITE.title}`} description="Get in touch with PBJ Komplit!">
+<IndexLayout
+  title={`Hubungi Kami - ${SITE.title}`}
+  description="Hubungi tim PBJ Komplit untuk pertanyaan, saran, atau feedback"
+>
   <div class="contact-page prose">
-    <h1>Contact Us</h1>
+    <h1>Hubungi Kami</h1>
 
     <p>
-      Have questions about learning Javanese language? Want to contribute to our content? We'd love
-      to hear from you!
+      Punya pertanyaan tentang aplikasi PBJ Komplit? Ingin memberikan saran atau feedback? Atau
+      tertarik untuk berkolaborasi? Kami senang mendengar dari Anda!
     </p>
 
     <div class="contact-info">
-      <h2>Get in Touch</h2>
-      <p>Feel free to reach out to us via email:</p>
+      <h2>Kontak</h2>
+      <p>Hubungi kami melalui email:</p>
 
       <div class="email-section">
-        <a href="mailto:splitfire@setoelkahfi.se" class="email-link"> splitfire@setoelkahfi.se </a>
+        <a href="mailto:info@pepakbasajawa.com" class="email-link"> info@pepakbasajawa.com </a>
       </div>
 
-      <p>We'll do our best to respond to your inquiry as soon as possible.</p>
+      <p>Kami akan berusaha merespons pertanyaan Anda secepat mungkin.</p>
     </div>
 
     <div class="topics">
-      <h2>What can you contact us about?</h2>
+      <h2>Apa yang bisa Anda tanyakan?</h2>
       <ul>
-        <li>Questions about Javanese language learning materials</li>
-        <li>Suggestions for new content or improvements</li>
-        <li>Technical issues with the website</li>
-        <li>Collaboration opportunities</li>
-        <li>General feedback about PBJ Komplit!</li>
+        <li>Pertanyaan tentang fitur aplikasi PBJ Komplit</li>
+        <li>Bantuan teknis atau troubleshooting</li>
+        <li>Saran materi pembelajaran baru</li>
+        <li>Laporan bug atau masalah</li>
+        <li>Feedback tentang pengalaman menggunakan aplikasi</li>
+        <li>Usulan perbaikan atau peningkatan fitur</li>
+        <li>Peluang kolaborasi atau kemitraan</li>
+        <li>Pertanyaan tentang bahasa dan budaya Jawa</li>
       </ul>
+    </div>
+
+    <div class="app-info">
+      <h2>Tentang Aplikasi</h2>
+      <p>
+        PBJ Komplit adalah aplikasi pembelajaran bahasa Jawa yang lengkap dan interaktif. Aplikasi
+        ini menyediakan materi pembelajaran dari tingkat dasar hingga mahir, mencakup kosakata, tata
+        bahasa, aksara Jawa, dan wawasan budaya Jawa.
+      </p>
+      <p>
+        Website: <a href="https://pepakbasajawa.5mb.app/" target="_blank" rel="noopener noreferrer">
+          https://pepakbasajawa.5mb.app/
+        </a>
+      </p>
+    </div>
+
+    <div class="community">
+      <h2>Bergabung dengan Komunitas</h2>
+      <p>
+        Kami percaya bahwa belajar bahasa lebih menyenangkan bersama komunitas. Bagikan pengalaman
+        belajar Anda, ajukan pertanyaan, dan bantu sesama pembelajar bahasa Jawa.
+      </p>
+    </div>
+
+    <div class="footer-note">
+      <p><em>Matur nuwun sampun rawuh! (Terima kasih sudah berkunjung!)</em></p>
+      <p><strong>Mari bersama-sama melestarikan bahasa dan budaya Jawa! 🙏</strong></p>
     </div>
   </div>
 </IndexLayout>
@@ -79,6 +112,32 @@ import { SITE } from '@/config'
   .topics li {
     margin: 0.5rem 0;
     line-height: 1.6;
+  }
+
+  .app-info,
+  .community {
+    margin: 2rem 0;
+  }
+
+  .app-info a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .app-info a:hover {
+    text-decoration: underline;
+  }
+
+  .footer-note {
+    margin: 3rem 0 1rem;
+    padding: 1.5rem;
+    background: var(--selection);
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .footer-note p {
+    margin: 0.5rem 0;
   }
 
   @media (max-width: 768px) {

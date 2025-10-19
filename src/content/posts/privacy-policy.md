@@ -3,17 +3,17 @@ title: Privacy Policy
 pubDate: '2025-07-12'
 ---
 
-# Kebijakan Privasi PBJ Komplit!
+# Kebijakan Privasi PBJ Komplit
 
 *Terakhir diperbarui: 12 Juli 2023*
 
 ## Pendahuluan
 
-Selamat datang di PBJ Komplit! Kami menghargai kepercayaan Anda dan berkomitmen untuk melindungi privasi Anda. Kebijakan Privasi ini menjelaskan bagaimana kami mengumpulkan, menggunakan, dan melindungi informasi yang Anda berikan saat menggunakan situs web kami.
+Selamat datang di PBJ Komplit Kami menghargai kepercayaan Anda dan berkomitmen untuk melindungi privasi Anda. Kebijakan Privasi ini menjelaskan bagaimana kami mengumpulkan, menggunakan, dan melindungi informasi yang Anda berikan saat menggunakan situs web kami.
 
 ## Tidak Ada Pengumpulan Data
 
-PBJ Komplit! tidak mengumpulkan, menyimpan, atau melacak data pengguna apa pun. Kami berkomitmen pada privasi pengguna, dan situs kami didesain untuk berfungsi tanpa perlu mengumpulkan informasi pribadi.
+PBJ Komplit tidak mengumpulkan, menyimpan, atau melacak data pengguna apa pun. Kami berkomitmen pada privasi pengguna, dan situs kami didesain untuk berfungsi tanpa perlu mengumpulkan informasi pribadi.
 
 Kami tidak menggunakan:
 - Cookies pelacakan
@@ -31,7 +31,7 @@ Kami berkomitmen untuk menyediakan layanan pembelajaran Bahasa Jawa tanpa mengum
 
 ## Tidak Ada Cookies atau Teknologi Pelacakan
 
-PBJ Komplit! tidak menggunakan cookies, pixel, atau teknologi pelacakan lainnya. Situs kami dirancang untuk memberikan pengalaman belajar Bahasa Jawa tanpa menyimpan informasi pada perangkat Anda atau melacak aktivitas Anda.
+PBJ Komplit tidak menggunakan cookies, pixel, atau teknologi pelacakan lainnya. Situs kami dirancang untuk memberikan pengalaman belajar Bahasa Jawa tanpa menyimpan informasi pada perangkat Anda atau melacak aktivitas Anda.
 
 ## Tidak Ada Berbagi Informasi
 
@@ -63,4 +63,4 @@ Situs web: [https://pepakbasajawa.5mb.app/](https://pepakbasajawa.5mb.app/)
 
 ---
 
-*PBJ Komplit! - Belajar Bahasa Jawa tanpa khawatir tentang privasi Anda.*
+*PBJ Komplit - Belajar Bahasa Jawa tanpa khawatir tentang privasi Anda.*

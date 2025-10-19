@@ -1,9 +1,9 @@
 export const SITE = {
   // SITE INFO ///////////////////////////////////////////////////////////////////////////////////////////
   website: 'https://pepakbasajawa.5mb.app/', // Site domain
-  title: 'PBJ Komplit!', // Site title
+  title: 'PBJ Komplit', // Site title
   author: 'Splitfire AB', // Author name
-  description: 'PBJ Komplit! - Tempat Belajar Bahasa Jawa', // Site description
+  description: 'PBJ Komplit - Aplikasi Pembelajaran Bahasa Jawa yang Lengkap dan Interaktif', // Site description
   language: 'id-ID', // Default language
 
   // GENERAL SETTINGS ////////////////////////////////////////////////////////////////////////////////////
