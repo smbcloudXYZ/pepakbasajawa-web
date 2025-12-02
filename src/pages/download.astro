@@ -2,6 +2,9 @@
 import IndexLayout from '@/layouts/IndexLayout.astro'
 import { SITE } from '@/config'
 import { Image } from 'astro:assets'
+
+// Fetch desktop app releases at build time (will be fetched client-side for dynamic updates)
+const desktopDownloadsApiUrl = '/api/download-desktop-app'
 ---
 
 <IndexLayout
@@ -34,12 +37,139 @@ import { Image } from 'astro:assets'
           height="50"
         />
       </a>
+
+      <h2>Desktop Apps</h2>
+      <div id="desktop-downloads">
+        <p>Loading desktop app downloads...</p>
+      </div>
+
+      <h2>Bantuan</h2>
+      <p>Butuh bantuan? Hubungi kami:</p>
       <div class="email-section">
-        <a href="mailto:info@pepakbasajawa.com" class="email-link"> info@pepakbasajawa.com </a>
+        <a href="mailto:splitfire@setoelkahfi.se" class="email-link"> splitfire@setoelkahfi.se </a>
       </div>
     </div>
   </div>
 </IndexLayout>
+
+<script>
+  interface DownloadLink {
+    platform: string
+    architecture?: string
+    url: string
+    filename: string
+    size: number
+    version: string
+  }
+
+  interface DownloadsResponse {
+    version: string
+    name: string
+    published_at: string
+    downloads: DownloadLink[]
+  }
+
+  function formatBytes(bytes: number): string {
+    if (bytes === 0) return '0 Bytes'
+    const k = 1024
+    const sizes = ['Bytes', 'KB', 'MB', 'GB']
+    const i = Math.floor(Math.log(bytes) / Math.log(k))
+    return Math.round((bytes / Math.pow(k, i)) * 100) / 100 + ' ' + sizes[i]
+  }
+
+  function getPlatformIcon(platform: string): string {
+    switch (platform.toLowerCase()) {
+      case 'macos':
+        return '🍎'
+      case 'windows':
+        return '🪟'
+      case 'linux':
+        return '🐧'
+      default:
+        return '💻'
+    }
+  }
+
+  async function loadDesktopDownloads() {
+    const container = document.getElementById('desktop-downloads')
+    if (!container) return
+
+    try {
+      const response = await fetch('/api/download-desktop-app')
+      if (!response.ok) {
+        throw new Error('Failed to fetch downloads')
+      }
+
+      const data: DownloadsResponse = await response.json()
+
+      if (!data.downloads || data.downloads.length === 0) {
+        container.innerHTML = '<p>No desktop downloads available at the moment.</p>'
+        return
+      }
+
+      // Group downloads by platform
+      const groupedDownloads = data.downloads.reduce(
+        (acc, download) => {
+          if (!acc[download.platform]) {
+            acc[download.platform] = []
+          }
+          acc[download.platform].push(download)
+          return acc
+        },
+        {} as Record<string, DownloadLink[]>
+      )
+
+      let html = `<div class="version-info">Latest Version: ${data.version}</div>`
+      html += '<div class="downloads-grid">'
+
+      // Sort platforms: macOS, Windows, Linux
+      const platformOrder = ['macOS', 'Windows', 'Linux']
+      const sortedPlatforms = Object.keys(groupedDownloads).sort(
+        (a, b) => platformOrder.indexOf(a) - platformOrder.indexOf(b)
+      )
+
+      for (const platform of sortedPlatforms) {
+        const downloads = groupedDownloads[platform]
+        html += `
+          <div class="platform-section">
+            <h3>${getPlatformIcon(platform)} ${platform}</h3>
+            <div class="download-items">
+        `
+
+        for (const download of downloads) {
+          html += `
+            <a href="${download.url}" class="download-item">
+              <div class="download-info">
+                <span class="download-name">${download.architecture || 'Download'}</span>
+                <span class="download-details">${download.filename} • ${formatBytes(download.size)}</span>
+              </div>
+              <span class="download-button">⬇️ Download</span>
+            </a>
+          `
+        }
+
+        html += `
+            </div>
+          </div>
+        `
+      }
+
+      html += '</div>'
+      container.innerHTML = html
+    } catch (error) {
+      console.error('Error loading desktop downloads:', error)
+      container.innerHTML =
+        '<p class="error-message">Unable to load desktop downloads. Please try again later.</p>'
+    }
+  }
+
+  // Load downloads when page is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadDesktopDownloads)
+  } else {
+    loadDesktopDownloads()
+  }
+</script>
 
 <style>
   .contact-page {
@@ -112,6 +242,96 @@ import { Image } from 'astro:assets'
     margin: 0.5rem 0;
   }
 
+  #desktop-downloads {
+    margin: 1.5rem 0;
+  }
+
+  .version-info {
+    padding: 0.75rem 1rem;
+    background: var(--selection);
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  .downloads-grid {
+    display: grid;
+    gap: 2rem;
+    margin-top: 1.5rem;
+  }
+
+  .platform-section {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    background: var(--code-bg);
+  }
+
+  .platform-section h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1.5rem;
+    color: var(--heading-color);
+  }
+
+  .download-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .download-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .download-item:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .download-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .download-name {
+    font-weight: 600;
+    color: var(--heading-color);
+    font-size: 1.1rem;
+  }
+
+  .download-details {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+  }
+
+  .download-button {
+    padding: 0.5rem 1rem;
+    background: var(--accent);
+    color: white;
+    border-radius: 4px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .error-message {
+    color: #e74c3c;
+    padding: 1rem;
+    background: rgba(231, 76, 60, 0.1);
+    border-radius: 6px;
+    border-left: 4px solid #e74c3c;
+  }
+
   @media (max-width: 768px) {
     .contact-page {
       padding: 1rem 0;
@@ -119,6 +339,21 @@ import { Image } from 'astro:assets'
 
     .email-link {
       font-size: 1.1rem;
+    }
+
+    .download-item {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .download-button {
+      width: 100%;
+      text-align: center;
+    }
+
+    .platform-section {
+      padding: 1rem;
     }
   }
 </style>
