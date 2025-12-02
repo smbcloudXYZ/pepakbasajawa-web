@@ -14,7 +14,8 @@
     "format:check": "prettier --check .",
     "new": "tsx scripts/new-post.ts",
     "update-theme": "tsx scripts/update-theme.ts",
-    "start-pepakbasajawaweb": "astro start -p 5002"
+    "start-pepakbasajawaweb": "astro start -p 5002",
+    "test:releases": "node scripts/test-github-releases.js"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.7",
