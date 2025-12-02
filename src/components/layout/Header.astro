@@ -1,7 +1,6 @@
 ---
 import { SITE } from '@/config'
 import ThemeToggle from '@/components/ui/ThemeToggle.astro'
-import { Image } from 'astro:assets'
 ---
 
 <header>
@@ -12,22 +11,7 @@ import { Image } from 'astro:assets'
     </div>
     <div class="header-right">
       <div class="flex flex-col gap-2 md:flex-row">
-        <a href="https://apps.apple.com/se/app/pepak-basa-jawa-komplit/id6752241812">
-          <Image
-            src="/images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
-            alt="PBJ Komplit Apple AppStore page"
-            width="150"
-            height="50"
-          />
-        </a>
-        <a href="https://play.google.com/store/apps/details?id=com.theblangkon.pepakbasajawa">
-          <Image
-            src="/images/GetItOnGooglePlay_Badge_Web_color_English.png"
-            alt="PBJ Komplit Google PlayStore page"
-            width="150"
-            height="50"
-          />
-        </a>
+        <a href="/download" class="download-link">Download Our Apps</a>
       </div>
       <ThemeToggle />
     </div>
@@ -57,11 +41,52 @@ import { Image } from 'astro:assets'
     align-items: center;
     gap: 1rem;
   }
+
+  .download-link {
+    padding: 0.5rem 1rem;
+    background-color: var(--accent);
+    color: white;
+    border-radius: 0.5rem;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+  }
+
+  .download-link:hover {
+    background-color: var(--accent-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .download-link:active {
+    transform: translateY(0);
+  }
+
   .favicon {
     position: absolute;
     width: 1.125rem;
     height: 1.125rem;
     bottom: calc(100% + 3.5rem);
     left: 0;
+  }
+  @media (max-width: 480px) {
+    nav {
+      justify-content: center;
+    }
+
+    .logo-container {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .header-right {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .download-link {
+      font-size: 0.9rem;
+      padding: 0.45rem 0.85rem;
+    }
   }
 </style>
