@@ -12,23 +12,29 @@ import rehypeCopyCode from './src/plugins/rehype-copy-code.mjs'
 import remarkTOC from './src/plugins/remark-toc.mjs'
 import { SITE } from './src/config'
 import path from 'path'
-
-import tailwindcss from '@tailwindcss/vite';
+import tailwindcss from '@tailwindcss/vite'
+import node from '@astrojs/node'
 
 export default defineConfig({
   site: SITE.website,
+  base: '/',
+
   devToolbar: {
     enabled: false
   },
-  output: 'static',
+
+  output: 'server',
+
   build: {
     inlineStylesheets: 'auto'
   },
+
   image: {
     service: {
       entrypoint: 'astro/assets/services/sharp'
     }
   },
+
   markdown: {
     shikiConfig: {
       theme: 'css-variables',
@@ -37,7 +43,9 @@ export default defineConfig({
     remarkPlugins: [remarkMath, remarkDirective, remarkEmbeddedMedia, remarkReadingTime, remarkTOC],
     rehypePlugins: [rehypeKatex, rehypeCleanup, rehypeImageProcessor, rehypeCopyCode]
   },
+
   integrations: [mdx(), sitemap()],
+
   vite: {
     resolve: {
       alias: {
@@ -61,5 +69,9 @@ export default defineConfig({
     },
 
     plugins: [tailwindcss()]
-  }
+  },
+
+  adapter: node({
+    mode: 'middleware'
+  })
 })
