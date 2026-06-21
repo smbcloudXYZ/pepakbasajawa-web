@@ -56,9 +56,16 @@ export default defineConfig({
     build: {
       rollupOptions: {
         output: {
-          manualChunks: {
-            'vendor-katex': ['katex'],
-            'vendor-utils': ['reading-time', 'mdast-util-to-string']
+          // Function form so externalised modules (e.g. katex in the SSR
+          // server build) are skipped instead of erroring; the client build
+          // still gets the vendor chunks where these modules are bundled.
+          manualChunks(id) {
+            if (id.includes('node_modules/katex')) return 'vendor-katex'
+            if (
+              id.includes('node_modules/reading-time') ||
+              id.includes('node_modules/mdast-util-to-string')
+            )
+              return 'vendor-utils'
           }
         }
       }
