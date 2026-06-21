@@ -34,7 +34,7 @@ try {
       }
     }
   })
-} catch (err) {
+} catch {
   // .env file doesn't exist, that's okay
 }
 
