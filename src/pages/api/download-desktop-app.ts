@@ -1,6 +1,5 @@
 import type { APIRoute } from 'astro'
 import type {
-  GitHubAsset,
   GitHubRelease,
   DownloadLink,
   DownloadsResponse,

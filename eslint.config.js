@@ -24,6 +24,13 @@ export default [
       'astro/no-set-html-directive': 'off'
     }
   },
+  {
+    // CLI/build scripts legitimately write to stdout.
+    files: ['scripts/**'],
+    rules: {
+      'no-console': 'off'
+    }
+  },
   prettier,
   {
     ignores: [

@@ -1,0 +1,23 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "2TQF86ZACD.com.theblangkon.pepakbasajawa",
+        "paths": [
+          "*"
+        ]
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": [
+      "2TQF86ZACD.com.theblangkon.pepakbasajawa"
+    ]
+  },
+  "appclips": {
+    "apps": [
+      "2TQF86ZACD.com.theblangkon.pepakbasajawa.Clip"
+    ]
+  }
+}
