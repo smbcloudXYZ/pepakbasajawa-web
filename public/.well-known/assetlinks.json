@@ -1,0 +1,28 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "xyz.smbcloud.rumi",
+      "sha256_cert_fingerprints": [
+        "B0:1B:64:A0:21:4A:01:A8:3E:1A:29:53:E0:28:00:C3:57:6C:E7:88:E9:52:37:45:AD:E9:60:3C:A6:88:B2:95"
+      ]
+    }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.theblangkon.pepakbasajawa",
+      "sha256_cert_fingerprints": [
+        "D9:50:FD:4C:36:BE:9D:B0:26:7E:24:5F:D9:A4:B9:3F:38:E7:F4:2C:16:91:27:F8:A8:E0:EA:82:39:5C:88:54"
+      ]
+    }
+  }
+]
